@@ -16,7 +16,7 @@ dist-ssr
 .vscode/*
 !.vscode/extensions.json
 .idea
-.husky
+.husky/*
 !.husky/pre-commit
 .DS_Store
 *.suo

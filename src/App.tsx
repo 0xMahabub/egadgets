@@ -1,13 +1,16 @@
-import { useState } from 'react';
 import reactLogo from './assets/react.svg';
 import './App.css';
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import { useCounterStore } from './store';
 
 const queryClient = new QueryClient();
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [count, increment] = useCounterStore((state) => [
+    state.count,
+    state.incre,
+  ]);
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -22,9 +25,7 @@ function App() {
         </div>
         <h1>Vite + React</h1>
         <div className='card'>
-          <button onClick={() => setCount((count) => count + 1)}>
-            count is {count}
-          </button>
+          <button onClick={() => increment()}>count is {count}</button>
           <p>
             Edit <code>src/App.tsx</code> and save to test HMR
           </p>

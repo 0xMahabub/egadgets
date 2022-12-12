@@ -1,7 +1,7 @@
 {
   "name": "listing",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "author": "0xMahabub <mahabub212002072@gmail.com>",
   "type": "commonjs",
   "scripts": {

@@ -19,9 +19,47 @@ body {
   width: 100%;
   height: auto;
   min-height: 100vh;
+  color: #333;
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .react {
+    animation: logo-spin infinite 20s linear;
+  }
 }
 
 /*===> TailwindCSS <===*/
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.container {
+  @apply flex flex-col py-2 md:py-6 px-2 w-full lg:max-w-[1140px] mx-auto;
+}
+.header__container {
+  @apply flex py-2 md:py-6 px-2 w-full lg:max-w-[1140px] mx-auto;
+}
+
+.content {
+  @apply min-h-[80vh];
+}
+
+.footer {
+  @apply flex items-center justify-center flex-col text-gray-400;
+}
+
+.btn {
+  @apply cursor-pointer capitalize;
+}
+.btn-link {
+  @apply bg-green-500 rounded-md text-white py-3 px-5;
+}

@@ -1,0 +1,19 @@
+[dev]
+  command = "yarn dev:app"
+  functions = "functions"
+  publish = "dist"
+  targetPort = 3000
+
+
+[build]
+  command = "yarn build"
+  publish = "dist"
+
+[functions]
+  node_bundler = "esbuild"
+  # included_files = ["data/*.json"]
+
+[[redirects]]
+  from = "/api"
+  to = "/.netlify/functions"
+  status = 200

@@ -14,23 +14,34 @@ function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <div className='App'>
-        <div>
+      <div className='w-[60%] min-w-[540px] mt-[200px] mx-auto bg-white py-16 px-4'>
+        <div className='flex justify-center gap-5 items-start'>
           <a href='https://vitejs.dev' target='_blank' rel='noreferrer'>
-            <img src='/vite.svg' className='logo' alt='Vite logo' />
+            <img src='/vite.svg' className='logo w-12 h-12' alt='Vite logo' />
           </a>
           <a href='https://reactjs.org' target='_blank' rel='noreferrer'>
-            <img src={reactLogo} className='logo react' alt='React logo' />
+            <img
+              src={reactLogo}
+              className='logo react w-12 h-12'
+              alt='React logo'
+            />
           </a>
         </div>
-        <h1>Vite + React</h1>
-        <div className='card'>
-          <button onClick={() => increment()}>count is {count}</button>
-          <p>
+        <h1 className='text-2xl text-center py-6 text-gray-600 font-bold'>
+          Vite + React
+        </h1>
+        <div className='card text-gray-500'>
+          <button
+            className='py-3 px-5 mb-4 bg-blue-500 text-white rounded-md mx-auto flex'
+            onClick={() => increment()}
+          >
+            count is {count}
+          </button>
+          <p className='block text-center'>
             Edit <code>src/App.tsx</code> and save to test HMR
           </p>
         </div>
-        <p className='read-the-docs'>
+        <p className='text-gray-400 block text-center'>
           Click on the Vite and React logos to learn more
         </p>
       </div>

@@ -1,12 +1,6 @@
 import zus from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
-
-interface ICounter {
-  count: number;
-  incre: (by?: number) => void;
-  decre: (by?: number) => void;
-  reset: () => void;
-}
+import { ICounter } from './types';
 
 export const useCounterStore = zus(
   devtools(

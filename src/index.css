@@ -6,7 +6,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #f5f5f5;
+  background-color: #faf8ea;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -62,4 +62,98 @@ body {
 }
 .btn-link {
   @apply bg-blue-500 hover:bg-blue-600 rounded-md text-white py-3 px-5;
+}
+
+/*---> Shop Page <---*/
+.shop_page {
+  @apply flex gap-x-4 justify-between items-start;
+}
+
+.shop_page_sidebar {
+  @apply flex flex-col bg-white py-4 p-6 gap-y-4 w-[280px] min-h-[80vh] shadow-sm rounded-md;
+}
+
+.shop_page_sidebar div strong {
+  @apply block font-semibold capitalize text-gray-600 mb-1;
+}
+
+.shop_page_sidebar .menu_list {
+  @apply list-none flex items-start justify-start pl-0 flex-col capitalize;
+}
+.menu_list li {
+  @apply text-gray-400;
+}
+
+.shop_page_area {
+  @apply flex flex-col p-0 w-full gap-y-4 min-h-[80vh] shadow-sm rounded-md bg-white;
+}
+
+.shop_page_top {
+  @apply flex p-4 w-full;
+}
+
+.shop_page_items {
+  @apply flex p-4 w-full;
+}
+
+.search {
+}
+.psearch {
+  @apply outline-none text-gray-500 rounded-md border-gray-300 border-[1px] py-1 pl-4;
+}
+
+.price {
+  @apply flex flex-wrap justify-between;
+}
+
+.price strong,
+.price .ranger {
+  @apply block w-full;
+}
+.price .range_input {
+  @apply flex items-center justify-between gap-x-8 mt-1;
+}
+.price .range_input input {
+  @apply w-[50%] outline-none border-2 border-gray-200 pl-2 rounded-md;
+}
+.bottom_part {
+  @apply flex flex-col items-start gap-y-4 mt-4 w-full text-gray-500;
+}
+
+.bottom_part span {
+  @apply w-full capitalize flex items-center justify-between;
+}
+
+.bottom_part .btn-clr {
+  @apply text-sm bg-red-500 hover:bg-red-600 text-white py-1 px-3 capitalize rounded-md;
+}
+
+.shop_page_top {
+  @apply flex items-center w-full;
+}
+
+.topbar_left {
+  @apply flex items-center justify-between;
+}
+.topbar_right {
+  @apply flex items-center justify-end ml-auto gap-x-2;
+}
+
+.topbar_left span {
+  @apply flex items-center justify-start gap-x-2;
+}
+
+.topbar_left span button {
+  @apply inline-flex items-center justify-center p-2 bg-gray-100 text-xl text-gray-500 rounded-md;
+}
+.topbar_left span button.active {
+  @apply bg-sky-500 text-white;
+}
+
+.topbar_left p {
+  @apply inline-block ml-10 text-gray-500 text-lg;
+}
+
+.topbar_right select {
+  @apply py-2 px-4 rounded-md outline-none border-[1px] border-gray-200;
 }

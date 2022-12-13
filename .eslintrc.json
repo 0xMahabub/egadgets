@@ -18,12 +18,14 @@
   },
   "rules": {
     "react/jsx-uses-react": "error",
-    "react/jsx-uses-vars": "error"
+    "react/jsx-uses-vars": "error",
+    "react-refresh/only-export-components": "warn"
   },
   "plugins": [
     "react",
     "@typescript-eslint",
     "import",
+    "react-refresh",
     "jsx-a11y",
     "react-hooks",
     "prettier"

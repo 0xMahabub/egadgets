@@ -5,14 +5,20 @@ import AppLayout from './AppLayout';
 
 const queryClient = new QueryClient();
 
+export const AppPage = () => {
+  return (
+    <>
+      <h1>Hello world!</h1>
+      <p>this is content area</p>
+    </>
+  );
+};
+
 const App: FC = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <AppLayout>
-        <>
-          <div>Hi</div>
-          <p>this is content area</p>
-        </>
+        <AppPage />
       </AppLayout>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>

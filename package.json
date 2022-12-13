@@ -10,8 +10,9 @@
     "start": "yarn preview",
     "build": "yarn tsc && vite build",
     "preview": "vite preview",
-    "prepare": "yarn husky install",
+    "prepare": "yarn husky install && yarn test:q",
     "test": "vitest",
+    "test:q": "vitest --silent --run",
     "test:ui": "vitest --ui",
     "coverage": "vitest --coverage"
   },
@@ -40,6 +41,7 @@
     "@typescript-eslint/eslint-plugin": "^5.46.0",
     "@typescript-eslint/parser": "^5.46.0",
     "@vitejs/plugin-react-swc": "^3.0.0",
+    "@vitest/coverage-c8": "^0.25.8",
     "@vitest/ui": "^0.25.7",
     "autoprefixer": "^10.4.13",
     "eslint": "^8.29.0",

@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import type { FC } from 'react';
+import { FC } from 'react';
 // import { Link } from 'react-router-dom';
 import reactLogo from '../assets/react.svg';
 import { HeadLink } from './HeadLink';

@@ -1,9 +1,9 @@
-import type { FC } from 'react';
+import { FC } from 'react';
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { BrowserRouter } from 'react-router-dom';
 import AppLayout from './AppLayout';
-import AppRouter from './Routers';
+import AppRouter from './pages/Routers';
 
 const queryClient = new QueryClient();
 

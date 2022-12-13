@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "ESNext",
-    "types": ["vitest/globals"],
+    // "types": ["vitest/globals"],
     "useDefineForClassFields": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "allowJs": false,
@@ -17,6 +17,6 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src/**/**.{js|ts|jsx|tsx}", "services/**/**.{js|ts|jsx|tsx}"],
+  "include": ["src", "services"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

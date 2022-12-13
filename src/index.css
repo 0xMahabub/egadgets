@@ -146,7 +146,7 @@ body {
 .topbar_left span button {
   @apply inline-flex items-center justify-center p-2 bg-gray-100 text-xl text-gray-500 rounded-md;
 }
-.topbar_left span button.active {
+.topbar_left .btn-active {
   @apply bg-sky-500 text-white;
 }
 

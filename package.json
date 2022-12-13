@@ -10,7 +10,7 @@
     "start": "yarn preview",
     "build": "yarn tsc && vite build",
     "preview": "vite preview",
-    "prepare": "yarn husky install",
+    "prepare": "yarn husky install && yarn test:q",
     "test": "vitest --silent",
     "test:q": "vitest --silent --run",
     "test:ui": "vitest --ui",

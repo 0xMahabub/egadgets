@@ -1,4 +1,3 @@
-import '@testing-library/jest-dom/extend-expect';
+/// <reference types="vitest" />
 
 /// <reference types="vite/client" />
-/// <reference types="vitest" />

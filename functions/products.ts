@@ -3,7 +3,6 @@ import { products } from '../data';
 // JSON API Response
 export const handler = async (_event, _context) => {
   const res = {
-    message: 'All Products',
     data: products,
   };
 

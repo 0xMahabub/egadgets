@@ -31,6 +31,7 @@ export interface IShopSide {
   classes?: string;
   activeCat?: string;
   changeByCategory: (key: string) => void;
+  resetAll: () => void;
 }
 export interface ILink {
   link: string;
@@ -52,4 +53,5 @@ export interface IProductStore {
   items: Product[] | undefined;
   setItems: (p: Product[] | undefined) => void;
   filterByCat: (key: string, products: Product[] | undefined) => void;
+  resetProducts: (products: Product[] | undefined) => void;
 }

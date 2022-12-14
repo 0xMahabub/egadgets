@@ -25,11 +25,13 @@ export const ShopPage: FC = () => {
 
   // fetch products
   const { data, isLoading, isFetched, isError } = useProducts();
-  const [products, setProduct, filterByCat] = useProductStore((s) => [
-    s.items,
-    s.setItems,
-    s.filterByCat,
-  ]);
+  const [products, setProduct, filterByCat, resetProducts] = useProductStore(
+    (s) => [s.items, s.setItems, s.filterByCat, s.resetProducts],
+  );
+
+  const resetAll = () => {
+    resetProducts(data);
+  };
 
   useEffect(() => {
     if (isFetched) {
@@ -55,6 +57,7 @@ export const ShopPage: FC = () => {
           classes='shop_page_sidebar'
           changeByCategory={changeByCategory}
           activeCat={filters.cat}
+          resetAll={resetAll}
         />
         <div className='shop_page_area'>
           <ShopTopBar

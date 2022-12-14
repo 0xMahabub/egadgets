@@ -6,6 +6,7 @@ export const ShopSideBar: FC<IShopSide> = ({
   classes,
   activeCat,
   changeByCategory,
+  resetAll,
 }) => {
   const categories = useCatagory();
 
@@ -62,7 +63,9 @@ export const ShopSideBar: FC<IShopSide> = ({
           <input type='checkbox' name='shipCheck' id='shipCheck' />
         </span>
 
-        <button className='btn-clr'>clear filters</button>
+        <button className='btn-clr' onClick={() => resetAll()}>
+          clear filters
+        </button>
       </div>
     </div>
   );

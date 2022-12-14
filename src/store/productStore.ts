@@ -17,6 +17,11 @@ export const useProductStore = zus(
             items: products?.filter((p) => p.category.includes(key)),
           }));
         },
+        resetProducts: async (products) => {
+          await set(() => ({
+            items: products,
+          }));
+        },
       }),
       {
         name: 'products',

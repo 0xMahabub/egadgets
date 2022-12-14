@@ -19,7 +19,7 @@ export interface Product {
 // -----------------------------------------------------=>
 // CUSTOM :=> Props @interfaces
 export interface IProductItems {
-  items: Product[];
+  items: Product[] | undefined;
 }
 export interface IShopTop {
   mode: string;

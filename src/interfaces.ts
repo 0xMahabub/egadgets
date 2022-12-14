@@ -51,5 +51,5 @@ export interface ISetting {
 export interface IProductStore {
   items: Product[] | undefined;
   setItems: (p: Product[] | undefined) => void;
-  filterByCat: (key: string, products: Product[]) => void;
+  filterByCat: (key: string, products: Product[] | undefined) => void;
 }

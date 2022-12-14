@@ -1,12 +1,6 @@
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
-
-interface ILink {
-  link: string;
-  label: string;
-  blank?: boolean;
-  classes?: string;
-}
+import { ILink } from '../interfaces';
 
 export const HeadLink: FC<ILink> = ({ link, label, blank, classes }) => {
   return (

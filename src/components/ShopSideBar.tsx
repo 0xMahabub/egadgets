@@ -1,9 +1,6 @@
 import { FC } from 'react';
 import { useCatagory } from '../../services';
-
-interface IShopSide {
-  classes?: string;
-}
+import { IShopSide } from '../interfaces';
 
 export const ShopSideBar: FC<IShopSide> = ({ classes }) => {
   const categories = useCatagory();
@@ -30,6 +27,7 @@ export const ShopSideBar: FC<IShopSide> = ({ classes }) => {
         <input type='range' placeholder='1000' className='ranger' />
         <div className='range_input'>
           <input type='text' placeholder='0' />
+          <span className='text-gray-400'>to</span>
           <input type='text' placeholder='5000' />
         </div>
       </div>

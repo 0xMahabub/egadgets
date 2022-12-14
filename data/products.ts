@@ -1,4 +1,4 @@
-import { Product } from '../services';
+import { Product } from '../src/interfaces';
 
 // mock data
 export const products: Product[] = [

@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { useProducts } from '../../services';
 import {
   ListProducts,
   ListProductsGrid,
@@ -13,6 +14,9 @@ export const ShopPage: FC = () => {
     s.toggleListStyle,
   ]);
 
+  // fetch products
+  const { isLoading, isFetched, isError, data } = useProducts();
+
   return (
     <>
       <div className='shop_page'>
@@ -20,11 +24,30 @@ export const ShopPage: FC = () => {
         <div className='shop_page_area'>
           <ShopTopBar
             classes='shop_page_top'
+            itemsCount={isFetched ? data?.length : 0}
             mode={listMode}
             toggler={toggleList}
           />
           <div className='shop_page_items'>
-            {listMode === 'grid' ? <ListProductsGrid /> : <ListProducts />}
+            {isLoading ? (
+              <>
+                <p>loading ...</p>
+              </>
+            ) : (
+              <>
+                {isFetched && listMode === 'grid' ? (
+                  <ListProductsGrid items={data} />
+                ) : (
+                  <ListProducts items={data} />
+                )}
+              </>
+            )}
+
+            {isError ? (
+              <>
+                <p>Error!</p>
+              </>
+            ) : null}
           </div>
         </div>
       </div>

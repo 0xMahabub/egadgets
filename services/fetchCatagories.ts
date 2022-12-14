@@ -1,12 +1,7 @@
 import { API_ENDPOINT } from './index';
 import axios from 'axios';
 import { useQuery } from '@tanstack/react-query';
-
-export interface Category {
-  id: number;
-  name: string;
-  code: string;
-}
+import { Category } from '../src/interfaces';
 
 export function useCatagory() {
   return useQuery<Category[], Error>({

@@ -81,7 +81,7 @@ body {
   @apply list-none flex items-start justify-start pl-0 flex-col;
 }
 .menu_list li {
-  @apply text-gray-400 cursor-pointer hover:text-blue-500;
+  @apply text-gray-500 cursor-pointer hover:text-blue-500;
 }
 
 .shop_page_area {

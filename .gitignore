@@ -21,6 +21,7 @@ coverage
 .idea
 .husky/*
 !.husky/pre-commit
+!.husky/pre-push
 .DS_Store
 *.suo
 *.ntvs*

@@ -1,10 +1,28 @@
 import { API_ENDPOINT } from './index';
 import axios from 'axios';
+import { useQuery } from '@tanstack/react-query';
 
-async function fetchProducts() {
-  const { data } = await axios.get(`${API_ENDPOINT}/products`);
+type Product = {
+  id: number;
+  name: string;
+  prop: object;
+  category: string[];
+  price: number;
+  qty: number;
+  sold: number;
+  rating: number;
+  photo: string;
+};
 
-  return data;
+export function useProducts() {
+  return useQuery<Product[], Error>({
+    queryKey: ['products'],
+    queryFn: async (): Promise<Product[]> => {
+      const { data } = await axios
+        .get(`${API_ENDPOINT}/products`)
+        .then((r) => r.data);
+
+      return data;
+    },
+  });
 }
-
-export { fetchProducts };

@@ -5,6 +5,11 @@
     "moduleResolution": "Node",
     "allowSyntheticDefaultImports": true
   },
-  "exclude": [".netlify", "./src/**/*.test.{js|ts|jsx|tsx}"],
+  "exclude": [
+    ".netlify",
+    "coverage",
+    "./src/**/*.test.{js|ts|jsx|tsx}",
+    "/src/**/*.spec.{js|ts|jsx|tsx}"
+  ],
   "include": ["vite.config.ts"]
 }

@@ -3,9 +3,9 @@ import { IProductItems } from '../interfaces';
 export const ListProductsGrid: FC<IProductItems> = ({ items }) => {
   return (
     <>
-      <div className='grid gap-5 grid-cols-3'>
+      <div className='product_grid'>
         {items?.map((it, i) => (
-          <div key={i} className='p-4 shadow-md rounded-md'>
+          <div key={i} className='product_card_grid'>
             <p>{it.name}</p>
             <small>{`$` + it.price}</small>
           </div>

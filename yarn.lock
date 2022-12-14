@@ -8617,6 +8617,11 @@ rimraf@^3.0.0, rimraf@^3.0.2:
   dependencies:
     glob "^7.1.3"
 
+rimraff@^0.0.1-security:
+  version "0.0.1-security"
+  resolved "https://registry.yarnpkg.com/rimraff/-/rimraff-0.0.1-security.tgz#5454c7f9c8df1fedabf107af7ef0ef5bb0a05d09"
+  integrity sha512-fW4+yD5XH1dFCJmbp3OK624b8yQ6c7SvyLDzyAT+UIOSuUZ+toClQCTw8ZV/ik8UqPln8dwwGGbCSE8UkicqVQ==
+
 rollup@^3.7.0:
   version "3.7.4"
   resolved "https://registry.npmjs.org/rollup/-/rollup-3.7.4.tgz"

@@ -1,4 +1,6 @@
-// global entities or models as shared
+// -----------------------------------------------------=>
+// Entity :=> Model @interfaces
+// -----------------------------------------------------=>
 export interface Category {
   id: number;
   name: string;
@@ -18,6 +20,7 @@ export interface Product {
 
 // -----------------------------------------------------=>
 // CUSTOM :=> Props @interfaces
+// -----------------------------------------------------=>
 export interface IProductItems {
   items: Product[] | undefined;
 }
@@ -26,11 +29,14 @@ export interface IShopTop {
   classes?: string;
   itemsCount: number | undefined;
   toggler: () => void;
+  sortBy: (type: string) => void;
+  sortKey?: string;
 }
 export interface IShopSide {
   classes?: string;
   activeCat?: string;
   changeByCategory: (key: string) => void;
+  resetAll: () => void;
 }
 export interface ILink {
   link: string;
@@ -41,6 +47,7 @@ export interface ILink {
 
 // -----------------------------------------------------=>
 // Zustand :=> InitialState @interfaces
+// -----------------------------------------------------=>
 export interface ISetting {
   listStyle: string;
   darkMode: boolean;
@@ -52,4 +59,6 @@ export interface IProductStore {
   items: Product[] | undefined;
   setItems: (p: Product[] | undefined) => void;
   filterByCat: (key: string, products: Product[] | undefined) => void;
+  sortBy: (type: string) => void;
+  resetProducts: (products: Product[] | undefined) => void;
 }

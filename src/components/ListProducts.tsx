@@ -6,9 +6,12 @@ export const ListProducts: FC<IProductItems> = ({ items }) => {
     <>
       <div className='flex gap-y-4 flex-col items-start justify-start w-full'>
         {items?.map((it, i) => (
-          <div key={i} className='p-4 shadow-md rounded-md w-full'>
-            <p>{it.name}</p>
-            <small>{`$` + it.price}</small>
+          <div key={i} className='product_card_list'>
+            <div className='product_photo'></div>
+            <div className='product_info'>
+              <p>{it.name}</p>
+              <small>{`$` + it.price}</small>
+            </div>
           </div>
         ))}
       </div>

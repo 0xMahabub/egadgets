@@ -169,5 +169,21 @@ body {
   @apply grid gap-4 grid-cols-3 w-full;
 }
 .product_card_grid {
-  @apply p-4 shadow-md rounded-md w-[100%] flex flex-col;
+  @apply p-0 shadow-md rounded-md w-[100%] flex flex-col overflow-hidden;
+}
+.product_card_grid .product_info {
+  @apply p-4;
+}
+.product_card_grid .product_photo {
+  @apply w-full py-[100px] bg-blue-100;
+}
+
+.product_card_list {
+  @apply p-0 shadow-md rounded-md w-full flex flex-row-reverse overflow-hidden;
+}
+.product_card_list .product_info {
+  @apply p-4 flex flex-col items-start mr-auto;
+}
+.product_card_list .product_photo {
+  @apply p-0 bg-blue-100 min-w-[300px] h-[200px];
 }

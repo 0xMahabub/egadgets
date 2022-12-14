@@ -9,10 +9,20 @@ import {
 import { useProductStore, useSettingStore } from '../store';
 
 export const ShopPage: FC = () => {
+  // ui mode :=> zustand @global
   const [listMode, toggleList] = useSettingStore((s) => [
     s.listStyle,
     s.toggleListStyle,
   ]);
+
+  // sorting :=> functionality
+  const [sortKey, setSetKey] = useState({
+    type: 'low',
+    isChanged: false,
+  });
+  const sortBy = (type: string) => {
+    setSetKey({ ...sortKey, type: type, isChanged: true });
+  };
 
   // filtering :=> functionality
   const [filters, setFilters] = useState({
@@ -24,10 +34,16 @@ export const ShopPage: FC = () => {
   };
 
   // fetch products
-  const { data, isLoading, isFetched, isError } = useProducts();
-  const [products, setProduct, filterByCat, resetProducts] = useProductStore(
-    (s) => [s.items, s.setItems, s.filterByCat, s.resetProducts],
-  );
+  const { data, isLoading, isFetched, isError } = useProducts(); // query
+  // state manager :=> zustand @global
+  const [products, setProduct, filterByCat, resetProducts, sortByProduct] =
+    useProductStore((s) => [
+      s.items,
+      s.setItems,
+      s.filterByCat,
+      s.resetProducts,
+      s.sortBy,
+    ]);
 
   const resetAll = () => {
     resetProducts(data);
@@ -38,6 +54,13 @@ export const ShopPage: FC = () => {
       setProduct(data);
     }
   }, [isFetched]);
+
+  useEffect(() => {
+    if (sortKey.isChanged) {
+      sortByProduct(data, sortKey.type);
+      setSetKey({ ...sortKey, isChanged: false });
+    }
+  }, [sortKey.isChanged]);
 
   useEffect(() => {
     if (filters.isChanged) {
@@ -65,6 +88,7 @@ export const ShopPage: FC = () => {
             itemsCount={isFetched ? products?.length : 0}
             mode={listMode}
             toggler={toggleList}
+            sortBy={sortBy}
           />
           <div className='shop_page_items'>
             {isLoading ? (

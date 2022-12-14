@@ -4,6 +4,7 @@ import { IShopTop } from '../interfaces';
 export const ShopTopBar: FC<IShopTop> = ({
   mode,
   toggler,
+  sortBy,
   classes,
   itemsCount,
 }) => {
@@ -31,11 +32,15 @@ export const ShopTopBar: FC<IShopTop> = ({
       <div></div>
       <div className='topbar_right'>
         <span className='capitalize text-gray-500'>sort by : </span>
-        <select name='sortby' id='sortBy'>
-          <option value='price(low)'>Price (Low)</option>
-          <option value='price(low)'>Price (High)</option>
-          <option value='name(a2z)'>Name (A-Z)</option>
-          <option value='name(z2a)'>Name (Z-A)</option>
+        <select
+          name='sortby'
+          id='sortBy'
+          onChange={(e) => sortBy(e.target.value)}
+        >
+          <option value='low'>Price (Low)</option>
+          <option value='high'>Price (High)</option>
+          <option value='a2z'>Name (A-Z)</option>
+          <option value='z2a'>Name (Z-A)</option>
         </select>
       </div>
     </div>

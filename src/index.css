@@ -87,7 +87,7 @@ body {
 }
 .menu_list li.active,
 .menu_list button.active {
-  @apply text-blue-500;
+  @apply text-blue-500 font-semibold;
 }
 
 .shop_page_area {
@@ -162,4 +162,12 @@ body {
 
 .topbar_right select {
   @apply py-2 px-4 rounded-md outline-none border-[1px] border-gray-200;
+}
+
+/*--- Product Card ---*/
+.product_grid {
+  @apply grid gap-4 grid-cols-3 w-full;
+}
+.product_card_grid {
+  @apply p-4 shadow-md rounded-md w-[100%] flex flex-col;
 }

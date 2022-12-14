@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { useProducts } from '../../services';
 import {
   ListProducts,
@@ -6,7 +6,7 @@ import {
   ShopSideBar,
   ShopTopBar,
 } from '../components';
-import { useSettingStore } from '../store';
+import { useProductStore, useSettingStore } from '../store';
 
 export const ShopPage: FC = () => {
   const [listMode, toggleList] = useSettingStore((s) => [
@@ -14,31 +14,66 @@ export const ShopPage: FC = () => {
     s.toggleListStyle,
   ]);
 
+  // filtering :=> functionality
+  const [filters, setFilters] = useState({
+    cat: '*',
+    isChanged: false,
+  });
+  const changeByCategory = (key: string) => {
+    setFilters({ ...filters, cat: key, isChanged: true });
+  };
+
   // fetch products
-  const { isLoading, isFetched, isError, data } = useProducts();
+  const { data, isLoading, isFetched, isError } = useProducts();
+  const [products, setProduct, filterByCat] = useProductStore((s) => [
+    s.items,
+    s.setItems,
+    s.filterByCat,
+  ]);
+
+  useEffect(() => {
+    if (isFetched) {
+      setProduct(data);
+    }
+  }, [isFetched]);
+
+  useEffect(() => {
+    if (filters.isChanged) {
+      if (filters.cat === '*') {
+        setProduct(data);
+      } else {
+        filterByCat(filters.cat, data);
+      }
+      setFilters({ ...filters, isChanged: false });
+    }
+  }, [filters.isChanged]);
 
   return (
     <>
       <div className='shop_page'>
-        <ShopSideBar classes='shop_page_sidebar' />
+        <ShopSideBar
+          classes='shop_page_sidebar'
+          changeByCategory={changeByCategory}
+          activeCat={filters.cat}
+        />
         <div className='shop_page_area'>
           <ShopTopBar
             classes='shop_page_top'
-            itemsCount={isFetched ? data?.length : 0}
+            itemsCount={isFetched ? products?.length : 0}
             mode={listMode}
             toggler={toggleList}
           />
           <div className='shop_page_items'>
             {isLoading ? (
               <>
-                <p>loading ...</p>
+                <p>loading</p>
               </>
             ) : (
               <>
                 {isFetched && listMode === 'grid' ? (
-                  <ListProductsGrid items={data} />
+                  <ListProductsGrid items={products} />
                 ) : (
-                  <ListProducts items={data} />
+                  <ListProducts items={products} />
                 )}
               </>
             )}

@@ -1,1 +1,2 @@
-export * from './setting/settingStore';
+export * from './settingStore';
+export * from './productStore';

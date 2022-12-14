@@ -27,7 +27,7 @@
     "zustand": "^4.1.5"
   },
   "engines": {
-    "node": ">=18.x",
+    "node": ">=16.x",
     "npm": ">=8.x"
   },
   "lint-staged": {

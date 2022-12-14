@@ -1,12 +1,12 @@
 import { FC } from 'react';
+import { IShopTop } from '../interfaces';
 
-interface IShopTop {
-  mode: string;
-  classes?: string;
-  toggler: () => void;
-}
-
-export const ShopTopBar: FC<IShopTop> = ({ mode, toggler, classes }) => {
+export const ShopTopBar: FC<IShopTop> = ({
+  mode,
+  toggler,
+  classes,
+  itemsCount,
+}) => {
   return (
     <div className={classes}>
       <div className='topbar_left'>
@@ -26,7 +26,7 @@ export const ShopTopBar: FC<IShopTop> = ({ mode, toggler, classes }) => {
           </button>
         </span>
 
-        <p>10 products found</p>
+        <p>{itemsCount} products found</p>
       </div>
       <div></div>
       <div className='topbar_right'>

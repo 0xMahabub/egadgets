@@ -1,18 +1,7 @@
 import { API_ENDPOINT } from './index';
 import axios from 'axios';
 import { useQuery } from '@tanstack/react-query';
-
-type Product = {
-  id: number;
-  name: string;
-  prop: object;
-  category: string[];
-  price: number;
-  qty: number;
-  sold: number;
-  rating: number;
-  photo: string;
-};
+import { Product } from '../src/interfaces';
 
 export function useProducts() {
   return useQuery<Product[], Error>({

@@ -1,10 +1,6 @@
-interface ICat {
-  id: number;
-  name: string;
-  code: string;
-}
+import { Category } from '../src/interfaces';
 
-export const categories: ICat[] = [
+export const categories: Category[] = [
   {
     id: 1,
     name: 'Smartphone',

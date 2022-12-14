@@ -1,5 +1,5 @@
 import { FC } from 'react';
-
-export const ListProductsGrid: FC = () => {
+import { IProductItems } from '../interfaces';
+export const ListProductsGrid: FC<IProductItems> = () => {
   return <p>List {`:=>`} Products @Grid</p>;
 };

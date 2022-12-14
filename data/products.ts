@@ -1,17 +1,7 @@
-interface IProduct {
-  id: number;
-  name: string;
-  prop: object;
-  category: string[];
-  price: number;
-  qty: number;
-  sold: number;
-  rating: number;
-  photo: string;
-}
+import { Product } from '../src/interfaces';
 
 // mock data
-export const products: IProduct[] = [
+export const products: Product[] = [
   {
     id: 1,
     photo: '',

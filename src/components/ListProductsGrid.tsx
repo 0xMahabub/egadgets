@@ -6,8 +6,11 @@ export const ListProductsGrid: FC<IProductItems> = ({ items }) => {
       <div className='product_grid'>
         {items?.map((it, i) => (
           <div key={i} className='product_card_grid'>
-            <p>{it.name}</p>
-            <small>{`$` + it.price}</small>
+            <div className='product_photo'></div>
+            <div className='product_info'>
+              <p>{it.name}</p>
+              <small>{`$` + it.price}</small>
+            </div>
           </div>
         ))}
       </div>

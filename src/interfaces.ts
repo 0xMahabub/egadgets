@@ -30,6 +30,7 @@ export interface IShopTop {
   itemsCount: number | undefined;
   toggler: () => void;
   sortBy: (type: string) => void;
+  sortKey?: string;
 }
 export interface IShopSide {
   classes?: string;
@@ -58,6 +59,6 @@ export interface IProductStore {
   items: Product[] | undefined;
   setItems: (p: Product[] | undefined) => void;
   filterByCat: (key: string, products: Product[] | undefined) => void;
-  sortBy: (products: Product[] | undefined, type: string) => void;
+  sortBy: (type: string) => void;
   resetProducts: (products: Product[] | undefined) => void;
 }

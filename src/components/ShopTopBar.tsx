@@ -5,6 +5,7 @@ export const ShopTopBar: FC<IShopTop> = ({
   mode,
   toggler,
   sortBy,
+  sortKey,
   classes,
   itemsCount,
 }) => {
@@ -36,6 +37,7 @@ export const ShopTopBar: FC<IShopTop> = ({
           name='sortby'
           id='sortBy'
           onChange={(e) => sortBy(e.target.value)}
+          defaultValue={sortKey}
         >
           <option value='low'>Price (Low)</option>
           <option value='high'>Price (High)</option>

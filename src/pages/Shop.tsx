@@ -46,7 +46,9 @@ export const ShopPage: FC = () => {
     ]);
 
   const resetAll = () => {
-    resetProducts(data);
+    resetProducts(data); // reset
+    setSetKey({ ...sortKey, type: 'low', isChanged: true }); // reset
+    setFilters({ ...filters, cat: '*', isChanged: true }); // reset
   };
 
   useEffect(() => {
@@ -57,7 +59,7 @@ export const ShopPage: FC = () => {
 
   useEffect(() => {
     if (sortKey.isChanged) {
-      sortByProduct(data, sortKey.type);
+      sortByProduct(sortKey.type);
       setSetKey({ ...sortKey, isChanged: false });
     }
   }, [sortKey.isChanged]);
@@ -89,6 +91,7 @@ export const ShopPage: FC = () => {
             mode={listMode}
             toggler={toggleList}
             sortBy={sortBy}
+            sortKey={sortKey.type}
           />
           <div className='shop_page_items'>
             {isLoading ? (

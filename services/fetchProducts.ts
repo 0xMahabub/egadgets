@@ -2,7 +2,7 @@ import { API_ENDPOINT } from './index';
 import axios from 'axios';
 import { useQuery } from '@tanstack/react-query';
 
-type Product = {
+export interface Product {
   id: number;
   name: string;
   prop: object;
@@ -12,7 +12,7 @@ type Product = {
   sold: number;
   rating: number;
   photo: string;
-};
+}
 
 export function useProducts() {
   return useQuery<Product[], Error>({

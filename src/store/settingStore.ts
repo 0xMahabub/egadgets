@@ -1,6 +1,6 @@
 import zus from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
-import { ISetting } from './types';
+import { ISetting } from '../interfaces';
 
 export const useSettingStore = zus(
   devtools(

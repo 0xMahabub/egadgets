@@ -2,7 +2,11 @@ import { FC } from 'react';
 import { useCatagory } from '../../services';
 import { IShopSide } from '../interfaces';
 
-export const ShopSideBar: FC<IShopSide> = ({ classes }) => {
+export const ShopSideBar: FC<IShopSide> = ({
+  classes,
+  activeCat,
+  changeByCategory,
+}) => {
   const categories = useCatagory();
 
   return (
@@ -15,9 +19,29 @@ export const ShopSideBar: FC<IShopSide> = ({ classes }) => {
         <strong>category</strong>
 
         <ul className='menu_list'>
-          {categories.isFetched
-            ? categories.data?.map((c, i) => <li key={i}>{c.name}</li>)
-            : null}
+          {categories.isFetched ? (
+            <>
+              <button
+                onClick={() => changeByCategory('*')}
+                className={
+                  activeCat === '*' ? 'capitalize active' : 'capitalize'
+                }
+              >
+                all categories
+              </button>
+              {categories.data?.map((c, i) => (
+                <button
+                  onClick={() => changeByCategory(c.code)}
+                  key={i}
+                  className={
+                    activeCat === c.code ? 'capitalize active' : 'capitalize'
+                  }
+                >
+                  {c.name}
+                </button>
+              ))}
+            </>
+          ) : null}
         </ul>
       </div>
 

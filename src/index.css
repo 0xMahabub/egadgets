@@ -70,7 +70,8 @@ body {
 }
 
 .shop_page_sidebar {
-  @apply flex flex-col bg-white py-4 p-6 gap-y-4 w-[280px] min-h-[80vh] shadow-sm rounded-md;
+  position: sticky;
+  @apply flex top-[20px] flex-col bg-white py-4 p-6 gap-y-4 w-[280px] min-h-[80vh] shadow-sm rounded-md;
 }
 
 .shop_page_sidebar div strong {
@@ -80,8 +81,13 @@ body {
 .shop_page_sidebar .menu_list {
   @apply list-none flex items-start justify-start pl-0 flex-col;
 }
-.menu_list li {
+.menu_list li,
+.menu_list button {
   @apply text-gray-500 cursor-pointer hover:text-blue-500;
+}
+.menu_list li.active,
+.menu_list button.active {
+  @apply text-blue-500;
 }
 
 .shop_page_area {

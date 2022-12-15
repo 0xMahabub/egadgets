@@ -5,7 +5,7 @@ import { HeadLink } from './HeadLink';
 
 export const Header: FC = () => {
   return (
-    <header className='flex w-full p-0 m-0 bg-white dark:bg-gray-700 border-b-2 border-gray-200 dark:border-gray-900'>
+    <header className='flex w-full p-0 m-0 bg-white dark:bg-gray-800 border-b-2 border-gray-200 dark:border-gray-700'>
       <nav className='items-center justify-between header__container'>
         <span className='flex items-center gap-x-2'>
           <img className='logo react' src={reactLogo} alt='react-logo' />
@@ -65,6 +65,6 @@ const links = [
     link: '/cart',
     blank: false,
     btn: false,
-    icon: 'bx bx-cart text-2xl',
+    icon: 'bx bx-cart-alt text-2xl',
   },
 ];

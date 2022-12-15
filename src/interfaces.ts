@@ -9,13 +9,22 @@ export interface Category {
 export interface Product {
   id: number;
   name: string;
-  prop: object;
+  prop: PropObj;
   category: string[];
   price: number;
   qty: number;
   sold: number;
   rating: number;
   photo: string;
+}
+
+/// properties as object
+interface PropObj {
+  variant?: string;
+  color?: string;
+  ram?: number;
+  chipset?: string;
+  cores?: number;
 }
 
 // -----------------------------------------------------=>

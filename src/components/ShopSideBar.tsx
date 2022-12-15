@@ -34,9 +34,7 @@ export const ShopSideBar: FC<IShopSide> = ({
                 <button
                   onClick={() => changeByCategory(c.code)}
                   key={i}
-                  className={
-                    activeCat === c.code ? 'capitalize active' : 'capitalize'
-                  }
+                  className={activeCat === c.code ? 'active' : ''}
                 >
                   {c.name}
                 </button>

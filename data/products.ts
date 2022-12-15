@@ -4,7 +4,8 @@ import { Product } from '../src/interfaces';
 export const products: Product[] = [
   {
     id: 1,
-    photo: '',
+    photo:
+      'https://i.ibb.co/ySV3XLP/apple-iphone-xs-64gb-4g-lte-gold-australian-stock-mobiles-personal-digital-latest-and-accessories-mo.jpg',
     name: 'iPhone XS',
     category: ['smartphone', 'iphone'],
     price: 799,
@@ -18,7 +19,7 @@ export const products: Product[] = [
   },
   {
     id: 2,
-    photo: '',
+    photo: 'https://i.ibb.co/2yNP1ZH/iphone-xs-117876-1512x.jpg',
     name: 'iPhone XS',
     category: ['smartphone', 'iphone'],
     price: 999,
@@ -32,21 +33,7 @@ export const products: Product[] = [
   },
   {
     id: 3,
-    photo: '',
-    name: 'iPhone XS',
-    category: ['smartphone', 'iphone'],
-    price: 999,
-    qty: 3,
-    sold: 10,
-    rating: 4.9,
-    prop: {
-      variant: '256gb',
-      color: 'black',
-    },
-  },
-  {
-    id: 3,
-    photo: '',
+    photo: 'https://i.ibb.co/G511RPg/iphone-xs-318914-540x-1.jpg',
     name: 'iPhone XS',
     category: ['smartphone', 'iphone'],
     price: 999,
@@ -60,7 +47,22 @@ export const products: Product[] = [
   },
   {
     id: 4,
-    photo: '',
+    photo: 'https://i.ibb.co/G511RPg/iphone-xs-318914-540x-1.jpg',
+    name: 'iPhone XS',
+    category: ['smartphone', 'iphone'],
+    price: 999,
+    qty: 3,
+    sold: 10,
+    rating: 4.9,
+    prop: {
+      variant: '256gb',
+      color: 'black',
+    },
+  },
+  {
+    id: 5,
+    photo:
+      'https://i.ibb.co/5RbvKBM/iphone-14-pro-spaceblack-Custom-Mac-BD-a4d2b3be-b0bf-4322-b1e4-45ba49ff1c5f.jpg',
     name: 'iPhone 14',
     category: ['smartphone', 'iphone'],
     price: 1299,
@@ -73,8 +75,8 @@ export const products: Product[] = [
     },
   },
   {
-    id: 5,
-    photo: '',
+    id: 6,
+    photo: 'https://i.ibb.co/XJh773V/d-s22plusphntmblck128-2020-8.jpg',
     name: 'Samsung Galaxy S22',
     category: ['smartphone', 'android'],
     price: 1199,
@@ -83,12 +85,12 @@ export const products: Product[] = [
     rating: 4.85,
     prop: {
       variant: '256gb',
-      color: 'golden',
+      color: 'black',
     },
   },
   {
-    id: 6,
-    photo: '',
+    id: 7,
+    photo: 'https://i.ibb.co/p15MrWJ/Pixel-7-Obsidian-1130.jpg',
     name: 'Pixel 7',
     category: ['smartphone', 'android'],
     price: 999,
@@ -101,8 +103,9 @@ export const products: Product[] = [
     },
   },
   {
-    id: 7,
-    photo: '',
+    id: 8,
+    photo:
+      'https://i.ibb.co/C64fdgR/mbp-spacegray-gallery2-202011-GEO-US-3bb54143-95a1-4a0f-8909-b1e17ab9fdcc.jpg',
     name: 'Apple Macbook Pro M1-512GB-16GB',
     category: ['laptop', 'macbook'],
     price: 1499,
@@ -113,13 +116,13 @@ export const products: Product[] = [
       variant: '512gb',
       color: 'silver-gray',
       ram: 16,
-      chipset: 'm1',
+      chipset: 'apple-silicon',
       cores: 8,
     },
   },
   {
-    id: 8,
-    photo: '',
+    id: 11,
+    photo: 'https://i.ibb.co/8dbr9vx/71-Ntkb72sp-L-SL1500.jpg',
     name: 'Lenevo Ideapad Slim 7i',
     category: ['laptop'],
     price: 1099,
@@ -136,7 +139,8 @@ export const products: Product[] = [
   },
   {
     id: 9,
-    photo: '',
+    photo:
+      'https://i.ibb.co/C64fdgR/mbp-spacegray-gallery2-202011-GEO-US-3bb54143-95a1-4a0f-8909-b1e17ab9fdcc.jpg',
     name: 'Apple Macbook Pro i7-512GB-16GB',
     category: ['laptop', 'macbook'],
     price: 1199,
@@ -153,7 +157,8 @@ export const products: Product[] = [
   },
   {
     id: 10,
-    photo: '',
+    photo:
+      'https://i.ibb.co/w7MxmGG/macbook-air-m2-midnight-custom-mac-bd-b82010cb-9405-4654-a165-9576a249e4e0.jpg',
     name: 'Apple Macbook Pro M2-512GB-16GB',
     category: ['laptop', 'macbook'],
     price: 1599,
@@ -164,7 +169,7 @@ export const products: Product[] = [
       variant: '512gb',
       color: 'silver-gray',
       ram: 32,
-      chipset: 'm1',
+      chipset: 'apple-silicon',
       cores: 16,
     },
   },

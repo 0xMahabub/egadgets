@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, test } from 'vitest';
 import { BrowserRouter } from 'react-router-dom';
-import { HeadLink } from '../HeadLink';
+import { HeadLink } from '../Header/HeadLink';
 
 describe('HeadLink Component', () => {
   test('HeadLink component rendering test', () => {

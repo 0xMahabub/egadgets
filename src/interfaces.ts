@@ -43,6 +43,7 @@ export interface ILink {
   label: string;
   blank?: boolean;
   classes?: string;
+  icon?: string;
 }
 
 // -----------------------------------------------------=>

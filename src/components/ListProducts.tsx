@@ -44,7 +44,7 @@ export const ListProducts: FC<IProductItems> = ({ items }) => {
                 <div className='flex flex-col justify-end mt-auto'>
                   <button
                     disabled={it.qty === 0 ? true : false}
-                    className='flex rounded-md items-center capitalize py-2 px-5 dark:bg-gray-700 bg-gray-100  text-gray-600 dark:text-white gap-x-4 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 dark:hover:text-white'
+                    className='inline-flex w-[165px] rounded-md items-center capitalize py-2 px-5 dark:bg-gray-700 bg-gray-100  text-gray-600 dark:text-white gap-x-4 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 dark:hover:text-white'
                     title={it.qty === 0 ? 'Not Available' : 'Add to cart'}
                   >
                     <span>add to cart</span>

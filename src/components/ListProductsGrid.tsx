@@ -1,6 +1,10 @@
 import { FC } from 'react';
 import { IProductItems } from '../interfaces';
-export const ListProductsGrid: FC<IProductItems> = ({ items }) => {
+export const ListProductsGrid: FC<IProductItems> = ({
+  items,
+  addToCart,
+  inCart,
+}) => {
   return (
     <>
       <div className='product_grid'>
@@ -42,11 +46,29 @@ export const ListProductsGrid: FC<IProductItems> = ({ items }) => {
                 </div>
                 <div className='flex flex-col items-end'>
                   <button
+                    onClick={() =>
+                      inCart(it.id)
+                        ? null
+                        : addToCart({
+                            id: it.id,
+                            name: it.name,
+                            photo: it.photo,
+                            price: it.price,
+                            qty: 1,
+                            prop: it.prop,
+                          })
+                    }
                     disabled={it.qty === 0 ? true : false}
-                    className='btn-addcart'
+                    className={
+                      inCart(it.id) ? 'btn-addcart added' : 'btn-addcart'
+                    }
                     title={it.qty === 0 ? 'Not Available' : 'Add to cart'}
                   >
-                    <i className='bx bx-cart-alt'></i>
+                    <i
+                      className={
+                        inCart(it.id) ? 'bx bxs-check-circle' : 'bx bx-cart-alt'
+                      }
+                    ></i>
                   </button>
                 </div>
               </div>

@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { ChangeEvent, FC, useRef, useState } from 'react';
 import { useCatagory } from '../../services';
 import { IShopSide } from '../interfaces';
 
@@ -7,13 +7,42 @@ export const ShopSideBar: FC<IShopSide> = ({
   activeCat,
   changeByCategory,
   resetAll,
+  search,
 }) => {
-  const categories = useCatagory();
+  const categories = useCatagory(); // query (react-query)
+  // const [price, setPrice] = useState({ min: 0, max: 2000 });
+  // console.log('--->>>  => ', price);
+
+  // const handlePriceRange = (e: ChangeEvent<HTMLInputElement>) => {
+  //   setPrice({ ...price, [e.target.id]: Number(e.target.value) });
+  // };
+
+  // const si = useRef<HTMLInputElement | null>(null);
+  // const minP = useRef<HTMLInputElement>(null);
+  // const maxP = useRef<HTMLInputElement>(null);
+
+  // reset button
+  const allReset = () => {
+    resetAll();
+    // si.current?.value = '';
+    // minP.current?.value = '';
+    // maxP.current?.value = '';
+  };
 
   return (
     <div className={classes}>
       <div className='search'>
-        <input type='text' placeholder='Search ...' className='psearch' />
+        <input
+          defaultValue={''}
+          onChange={(e) => {
+            setTimeout(() => search(e.target.value), 500); // .5s delay
+          }}
+          type='text'
+          name='search'
+          autoComplete='off'
+          placeholder='Search ...'
+          className='psearch'
+        />
       </div>
 
       <div className='cats'>
@@ -45,14 +74,28 @@ export const ShopSideBar: FC<IShopSide> = ({
       </div>
 
       <div className='price'>
-        <strong>price</strong>
+        {/* <strong>price</strong> */}
 
-        <input type='range' placeholder='1000' className='ranger' />
-        <div className='range_input'>
-          <input type='text' placeholder='0' />
+        {/* <input type='range' placeholder='1000' className='ranger' /> */}
+        {/* <div className='range_input'>
+          <input
+            type='text'
+            id='min'
+            placeholder='0'
+            defaultValue={price.min}
+            onChange={handlePriceRange}
+            ref={minP}
+          />
           <span className='text-gray-400'>to</span>
-          <input type='text' placeholder='5000' />
-        </div>
+          <input
+            type='text'
+            id='max'
+            placeholder='5000'
+            defaultValue={price.max}
+            onChange={handlePriceRange}
+            ref={maxP}
+          />
+        </div> */}
       </div>
 
       <div className='bottom_part'>
@@ -61,7 +104,7 @@ export const ShopSideBar: FC<IShopSide> = ({
           <input type='checkbox' name='shipCheck' id='shipCheck' />
         </span>
 
-        <button className='btn-clr' onClick={() => resetAll()}>
+        <button className='btn-clr' onClick={() => allReset()}>
           clear filters
         </button>
       </div>

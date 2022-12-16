@@ -85,7 +85,9 @@ p {
   @apply cursor-pointer capitalize hover:underline;
 }
 .btn-link {
-  @apply bg-blue-500 hover:bg-blue-600 rounded-md text-white dark:text-gray-500 py-3 px-5;
+  @apply bg-blue-500 hover:bg-blue-600 rounded-md text-white dark:text-gray-500 py-3 px-4;
+}
+.btn-cart {
 }
 
 /*---> Shop Page <---*/
@@ -234,6 +236,68 @@ p {
   @apply w-10 h-10 rounded-md inline-flex hover:bg-blue-500 hover:text-white
   items-center justify-center bg-gray-200 text-blue-700 text-2xl;
 }
+.btn-addcart-list {
+  @apply inline-flex w-[165px] rounded-md items-center capitalize py-2 px-5 dark:bg-gray-700 bg-gray-100  text-gray-600 dark:text-white gap-x-4 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 dark:hover:text-white;
+}
 .btn-addcart:disabled {
   @apply bg-red-200 text-red-600 z-0;
+}
+.btn-addcart.added,
+.btn-addcart-list.added {
+  @apply bg-green-600 text-white;
+}
+
+/*---> CartItems <---*/
+.cart_items {
+  @apply w-full flex flex-col gap-y-2;
+}
+.cart_item {
+  @apply flex w-full max-h-[100px] gap-y-4 bg-white 
+  dark:bg-gray-700 dark:text-white p-4 rounded-md items-center;
+}
+
+.cart_item_photo {
+  @apply h-[100%] w-[80px];
+}
+.cart_item_photo img {
+  @apply w-full h-full;
+  object-fit: cover;
+  object-position: center;
+}
+.cart_item_info {
+  @apply pl-4;
+}
+.cart_item_info .price {
+  @apply flex gap-x-1;
+}
+.cart_item_info .price span {
+  @apply text-red-500 dark:text-red-400 font-semibold mr-auto;
+}
+.cart_item_prop {
+  @apply flex gap-2 flex-wrap  mr-auto capitalize;
+}
+.cart_item_action {
+  @apply ml-auto flex items-center gap-x-3;
+}
+.cart_item_action button {
+  @apply p-0 w-10 h-10 rounded-md text-xl text-white dark:bg-gray-600 
+  inline-flex justify-center items-center;
+}
+.cart_item_action button.qp {
+  @apply bg-blue-500 dark:bg-gray-600;
+}
+.cart_item_action button.qd {
+  @apply bg-blue-500 dark:bg-gray-600;
+}
+.cart_item_action button.cd {
+  @apply bg-red-500 dark:bg-gray-600;
+}
+.cart_total {
+  @apply ml-auto text-right mt-2;
+}
+.cart_total p {
+  @apply font-semibold;
+}
+.cart_total p span {
+  @apply text-xl text-red-500;
 }

@@ -6,7 +6,7 @@ import {
   ShopSideBar,
   ShopTopBar,
 } from '../components';
-import { useProductStore, useSettingStore } from '../store';
+import { useProductStore, useSettingStore, useCartStore } from '../store';
 
 export const ShopPage: FC = () => {
   // ui mode :=> zustand @global
@@ -51,6 +51,14 @@ export const ShopPage: FC = () => {
     s.sortBy,
     s.search,
   ]);
+  // cart
+  const [addToCart, cart] = useCartStore((s) => [s.addToCart, s.items]);
+  const isinCart = (pid: number) => {
+    if (cart?.length > 0 && cart?.find((it) => it.id === pid)) {
+      return true;
+    }
+    return false;
+  };
 
   const resetAll = () => {
     resetProducts(data); // reset
@@ -113,9 +121,17 @@ export const ShopPage: FC = () => {
             ) : (
               <>
                 {isFetched && listMode === 'grid' ? (
-                  <ListProductsGrid items={products} />
+                  <ListProductsGrid
+                    inCart={isinCart}
+                    items={products}
+                    addToCart={addToCart}
+                  />
                 ) : (
-                  <ListProducts items={products} />
+                  <ListProducts
+                    inCart={isinCart}
+                    items={products}
+                    addToCart={addToCart}
+                  />
                 )}
               </>
             )}

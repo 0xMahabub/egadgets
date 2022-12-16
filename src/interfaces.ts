@@ -32,6 +32,8 @@ interface PropObj {
 // -----------------------------------------------------=>
 export interface IProductItems {
   items: Product[] | undefined;
+  addToCart: (p: ICartItem) => void;
+  inCart: (pid: number) => boolean;
 }
 export interface IShopTop {
   mode: string;
@@ -73,4 +75,21 @@ export interface IProductStore {
   sortBy: (type: string) => void;
   resetProducts: (products: Product[] | undefined) => void;
   search: (q: string, products: Product[] | undefined) => void;
+}
+
+export interface ICart {
+  items: ICartItem[];
+  addToCart: (p: ICartItem) => void;
+  remove: (pid: number) => void;
+  increQ: (pid: number) => void;
+  decreQ: (pid: number) => void;
+}
+
+export interface ICartItem {
+  id: number;
+  name: string;
+  prop: PropObj;
+  price: number;
+  photo: string;
+  qty: number;
 }

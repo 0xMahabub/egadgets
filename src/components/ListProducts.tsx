@@ -1,7 +1,11 @@
 import { FC } from 'react';
 import { IProductItems } from '../interfaces';
 
-export const ListProducts: FC<IProductItems> = ({ items }) => {
+export const ListProducts: FC<IProductItems> = ({
+  items,
+  inCart,
+  addToCart,
+}) => {
   return (
     <>
       <div className='flex gap-y-4 flex-col items-start justify-start w-full'>
@@ -44,11 +48,33 @@ export const ListProducts: FC<IProductItems> = ({ items }) => {
                 <div className='flex flex-col justify-end mt-auto'>
                   <button
                     disabled={it.qty === 0 ? true : false}
-                    className='inline-flex w-[165px] rounded-md items-center capitalize py-2 px-5 dark:bg-gray-700 bg-gray-100  text-gray-600 dark:text-white gap-x-4 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 dark:hover:text-white'
+                    onClick={() =>
+                      inCart(it.id)
+                        ? null
+                        : addToCart({
+                            id: it.id,
+                            name: it.name,
+                            photo: it.photo,
+                            price: it.price,
+                            qty: 1,
+                            prop: it.prop,
+                          })
+                    }
+                    className={
+                      inCart(it.id)
+                        ? 'btn-addcart-list added'
+                        : 'btn-addcart-list'
+                    }
                     title={it.qty === 0 ? 'Not Available' : 'Add to cart'}
                   >
-                    <span>add to cart</span>
-                    <i className='bx bx-cart-alt text-2xl'></i>
+                    <span>{inCart(it.id) ? 'Added' : 'add to cart'}</span>
+                    <i
+                      className={
+                        inCart(it.id)
+                          ? 'bx bx-check-circle text-2xl'
+                          : 'bx bx-cart-alt text-2xl'
+                      }
+                    ></i>
                   </button>
                 </div>
               </div>

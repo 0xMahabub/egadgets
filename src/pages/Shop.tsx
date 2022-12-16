@@ -36,19 +36,30 @@ export const ShopPage: FC = () => {
   // fetch products
   const { data, isLoading, isFetched, isError } = useProducts(); // query
   // state manager :=> zustand @global
-  const [products, setProduct, filterByCat, resetProducts, sortByProduct] =
-    useProductStore((s) => [
-      s.items,
-      s.setItems,
-      s.filterByCat,
-      s.resetProducts,
-      s.sortBy,
-    ]);
+  const [
+    products,
+    setProduct,
+    filterByCat,
+    resetProducts,
+    sortByProduct,
+    searchProducts,
+  ] = useProductStore((s) => [
+    s.items,
+    s.setItems,
+    s.filterByCat,
+    s.resetProducts,
+    s.sortBy,
+    s.search,
+  ]);
 
   const resetAll = () => {
     resetProducts(data); // reset
     setSetKey({ ...sortKey, type: 'low', isChanged: true }); // reset
     setFilters({ ...filters, cat: '*', isChanged: true }); // reset
+  };
+
+  const searchForProducts = (q: string) => {
+    searchProducts(q, data);
   };
 
   useEffect(() => {
@@ -83,6 +94,7 @@ export const ShopPage: FC = () => {
           changeByCategory={changeByCategory}
           activeCat={filters.cat}
           resetAll={resetAll}
+          search={searchForProducts}
         />
         <div className='shop_page_area'>
           <ShopTopBar

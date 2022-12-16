@@ -7,13 +7,21 @@ export const ShopSideBar: FC<IShopSide> = ({
   activeCat,
   changeByCategory,
   resetAll,
+  search,
 }) => {
-  const categories = useCatagory();
+  const categories = useCatagory(); // query (react-query)
 
   return (
     <div className={classes}>
       <div className='search'>
-        <input type='text' placeholder='Search ...' className='psearch' />
+        <input
+          defaultValue={''}
+          onChange={(e) => search(e.target.value)}
+          type='text'
+          name='search'
+          placeholder='Search ...'
+          className='psearch'
+        />
       </div>
 
       <div className='cats'>

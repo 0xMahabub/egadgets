@@ -50,6 +50,10 @@ export interface IShopSide {
   resetAll: () => void;
   search: (q: string) => void;
 }
+
+export interface ISearch {
+  searchFn: (q: string) => void;
+}
 export interface ILink {
   link: string;
   label: string;

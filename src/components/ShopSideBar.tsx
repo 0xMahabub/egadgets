@@ -1,6 +1,7 @@
-import { ChangeEvent, FC, useRef, useState } from 'react';
+import { FC } from 'react';
 import { useCatagory } from '../../services';
 import { IShopSide } from '../interfaces';
+import { SearchInput } from './SearchInput';
 
 export const ShopSideBar: FC<IShopSide> = ({
   classes,
@@ -10,39 +11,16 @@ export const ShopSideBar: FC<IShopSide> = ({
   search,
 }) => {
   const categories = useCatagory(); // query (react-query)
-  // const [price, setPrice] = useState({ min: 0, max: 2000 });
-  // console.log('--->>>  => ', price);
-
-  // const handlePriceRange = (e: ChangeEvent<HTMLInputElement>) => {
-  //   setPrice({ ...price, [e.target.id]: Number(e.target.value) });
-  // };
-
-  // const si = useRef<HTMLInputElement | null>(null);
-  // const minP = useRef<HTMLInputElement>(null);
-  // const maxP = useRef<HTMLInputElement>(null);
 
   // reset button
   const allReset = () => {
     resetAll();
-    // si.current?.value = '';
-    // minP.current?.value = '';
-    // maxP.current?.value = '';
   };
 
   return (
     <div className={classes}>
       <div className='search'>
-        <input
-          defaultValue={''}
-          onChange={(e) => {
-            setTimeout(() => search(e.target.value), 500); // .5s delay
-          }}
-          type='text'
-          name='search'
-          autoComplete='off'
-          placeholder='Search ...'
-          className='psearch'
-        />
+        <SearchInput searchFn={search} />
       </div>
 
       <div className='cats'>

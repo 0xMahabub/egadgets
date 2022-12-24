@@ -15,6 +15,7 @@ export const ThemeSwitch = () => {
       )}
       <button
         className='theme-switch'
+        data-testid='theme-switch'
         onClick={() => {
           toggleDarkMode(); // for global state
         }}
